@@ -19,7 +19,7 @@ jobs:
       with:
         name: "swift"
         url: "https://download.swift.org/swift-5.10-branch/ubuntu2004-aarch64/swift-5.10-DEVELOPMENT-SNAPSHOT-2023-11-09-a/swift-5.10-DEVELOPMENT-SNAPSHOT-2023-11-09-a-ubuntu20.04-aarch64.tar.gz"
-        pathInArchive: "swift-5.9-DEVELOPMENT-SNAPSHOT-2023-11-09-a-ubuntu20.04"
+        pathInArchive: "swift-5.10-DEVELOPMENT-SNAPSHOT-2023-11-09-a-ubuntu20.04-aarch64"
 
     - name: Run tests
       run: make test
