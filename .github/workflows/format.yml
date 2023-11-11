@@ -1,0 +1,35 @@
+# This workflow will build a Swift project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
+
+name: Format
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - '.github/workflows/format.yml'
+      - 'Sources/**/*.swift'
+      - 'Tests/**/*.swift'
+      - 'Package.swift'
+
+jobs:
+  format:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Bootstrap
+      run: make bootstrap
+      
+    - name: Format
+      run: make format
+      
+    - name: Commit
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: '[CI] format files'
+        branch: 'main'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
