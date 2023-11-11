@@ -18,8 +18,8 @@ jobs:
       run: |
         curl -L https://swift-server.github.io/swiftly/swiftly-install.sh -o swiftly-install.sh
         bash swiftly-install.sh --disable-confirmation --platform ubuntu22.04
-        swiftly install 5.7-snapshot
-        swiftly list
+        swiftly install 5.10-snapshot
+        swiftly use 5.10-snapshot
       # uses: engineerd/configurator@v0.0.9
       # with:
       #   name: "swift"
@@ -27,4 +27,4 @@ jobs:
       #   pathInArchive: "swift-5.10-DEVELOPMENT-SNAPSHOT-2023-11-09-a-ubuntu20.04-aarch64"
 
     - name: Run tests
-      run: ls -lah
+      run: swift test
