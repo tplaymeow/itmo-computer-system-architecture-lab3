@@ -1,0 +1,25 @@
+name: Tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Setup swift
+      uses: engineerd/configurator@v0.0.9
+      with:
+        name: "swift"
+        url: "https://download.swift.org/swift-5.10-branch/ubuntu2004-aarch64/swift-5.10-DEVELOPMENT-SNAPSHOT-2023-11-09-a/swift-5.10-DEVELOPMENT-SNAPSHOT-2023-11-09-a-ubuntu20.04-aarch64.tar.gz"
+        pathInArchive: "swift-5.10-DEVELOPMENT-SNAPSHOT-2023-11-09-a-ubuntu20.04-aarch64"
+
+    - name: Run tests
+      run: ls -lah
