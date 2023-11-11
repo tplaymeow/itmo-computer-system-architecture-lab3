@@ -20,11 +20,6 @@ jobs:
         bash swiftly-install.sh --disable-confirmation --platform ubuntu22.04
         swiftly install 5.10-snapshot
         swiftly use 5.10-snapshot
-      # uses: engineerd/configurator@v0.0.9
-      # with:
-      #   name: "swift"
-      #   url: "https://download.swift.org/swift-5.10-branch/ubuntu2004-aarch64/swift-5.10-DEVELOPMENT-SNAPSHOT-2023-11-09-a/swift-5.10-DEVELOPMENT-SNAPSHOT-2023-11-09-a-ubuntu20.04-aarch64.tar.gz"
-      #   pathInArchive: "swift-5.10-DEVELOPMENT-SNAPSHOT-2023-11-09-a-ubuntu20.04-aarch64"
-
+        
     - name: Run tests
-      run: swift test
+      run: make test
