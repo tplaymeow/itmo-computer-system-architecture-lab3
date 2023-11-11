@@ -46,7 +46,7 @@ let package = Package(
       name: "TranslatorApp",
       dependencies: [
         "Translator",
-        .product(name: "ArgumentParser", package: "swift-argument-parser")
+        .product(name: "ArgumentParser", package: "swift-argument-parser"),
       ],
       swiftSettings: [
         .enableExperimentalFeature("StrictConcurrency=complete")

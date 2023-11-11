@@ -1,6 +1,6 @@
 import ArgumentParser
-import Translator
 import Foundation
+import Translator
 
 @main
 struct TranslatorApp: ParsableCommand {
