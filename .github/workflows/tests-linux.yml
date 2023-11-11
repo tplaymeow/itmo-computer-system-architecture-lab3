@@ -16,7 +16,7 @@ jobs:
       
     - name: Setup swift
       run: |
-        curl -L https://swift-server.github.io/swiftly/swiftly-install.sh | bash --disable-confirmation --platform ubuntu22.04
+        bash "$(curl -L https://swift-server.github.io/swiftly/swiftly-install.sh)" --disable-confirmation --platform ubuntu22.04
         swiftly install 5.7-snapshot
         swiftly list
       # uses: engineerd/configurator@v0.0.9
